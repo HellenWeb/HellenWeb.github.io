@@ -152,6 +152,10 @@ p {
   background-color: white;
 }
 
+.content p {
+  color: black;
+}
+
 /* Animation */
 .parallax > use {
   -webkit-animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
