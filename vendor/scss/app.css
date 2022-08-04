@@ -14,7 +14,6 @@ p {
   font-family: 'Lato', sans-serif;
   letter-spacing: 1px;
   font-size: 14px;
-  color: #333333;
 }
 
 .intro > .intro__inner {
@@ -39,9 +38,9 @@ p {
   color: white;
   opacity: .2;
   margin-bottom: 40px;
+  -webkit-transition: none;
+  transition: none;
   cursor: pointer;
-  -webkit-transition: all .5s;
-  transition: all .5s;
 }
 
 .intro > .intro__inner img {
@@ -60,9 +59,10 @@ p {
   color: rgba(255, 255, 255, 0.514);
   margin: 0px;
   font-size: 16px;
-  z-index: 1;
   opacity: 1;
   bottom: 20px;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .group_icon {
@@ -80,8 +80,6 @@ p {
   color: black;
   font-size: 20px;
   margin: 5px;
-  -webkit-transition: all .1s;
-  transition: all .1s;
   cursor: pointer;
 }
 
@@ -97,6 +95,8 @@ p {
   border-radius: 400px;
   margin-right: 5%;
   opacity: 1;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .header {
