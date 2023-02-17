@@ -102,7 +102,7 @@ p {
 .header {
   position: relative;
   text-align: center;
-  background: #d63a3a;
+  background: rgb(214, 58, 58);
   color: white;
 }
 
