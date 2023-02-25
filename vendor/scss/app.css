@@ -56,7 +56,7 @@ p {
 #spec {
   font-family: 'Rajdhani', sans-serif;
   position: relative;
-  color: rgba(255, 255, 255, 0.514);
+  color: white;
   margin: 0px;
   font-size: 16px;
   opacity: 1;
@@ -89,9 +89,9 @@ p {
 
 #img_profile {
   width: 42%;
-  border: 2px solid transparent;
-  -webkit-box-shadow: 0px 0px 30px black;
-          box-shadow: 0px 0px 30px black;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 0px 20px black;
+          box-shadow: 0px 0px 20px black;
   border-radius: 400px;
   margin-right: 5%;
   opacity: 1;
@@ -102,7 +102,7 @@ p {
 .header {
   position: relative;
   text-align: center;
-  background: #cdcccc;
+  background: #d63a3a;
   color: white;
 }
 
