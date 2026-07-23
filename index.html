@@ -1,66 +1,290 @@
-<!--
-    name: HellenWeb
-    github: https://github.com/HellenWeb/HellenWeb.github.io
-    description: My Portfolio
--->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="vendor/scss/app.css">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <title>HellenWeb</title>
-    <link rel="shortcut icon" type="image/jpg" href="/favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Артём Кондратьев — Fullstack разработчик</title>
+<meta name="description" content="HellenWeb — fullstack-разработчик. Веб-приложения, Telegram-боты, интеграции с ИИ.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <div class="header" style="background-image: linear-gradient(rgb(234, 50, 50), rgb(17, 6, 6))">
+<div class="grain" aria-hidden="true"></div>
+<div class="rail" aria-hidden="true"><svg class="rail__line" viewBox="0 0 2 100" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="100" /></svg></div>
 
-    <div class="inner-header flex">
-        <div class="intro">
-            <div class="intro__inner">
-                <img id="img_profile" src="https://avatars.githubusercontent.com/u/84445465?v=4">
-                <div style="margin-top: 55px">
-                    <h1>HellenWeb</h1>
-                    <p id="spec">Ethical Security Hacker</p>
-                    <p>
-                        Hi my name is Hellen, I am a student of the programming and pentest. Going to his goal of getting into Silicon Valley and making the world a better place
-                    </p>
-                    <a href="https://github.com/HellenWeb/HellenWeb/blob/master/README.md#Donate"><img src="https://img.shields.io/badge/Crypto-Donate-red?style=for-the-badge&logo=appveyor"></a>
-                    <div class="group_icon">
-                        <a href=" https://t.me/YungHellen"><i class="fa fa-telegram" aria-hidden="true"></i></a>
-                        <a href="https://github.com/HellenWeb"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        <a href="https://www.reddit.com/user/Accurate_Ad9418"><i class="fa fa-reddit" aria-hidden="true"></i></a>
-                        <a href="https://codeberg.org/HellenWeb"><img style="margin: 5px; height: 20px; " src="https://s3.tosdr.org/logos/3370.png"></a>
-                    </div>
-                </div>
-            </div>
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__mark">HW<span>.</span></a>
+    <nav class="nav__links">
+      <a href="#about">Обо мне</a>
+      <a href="#stack">Стек</a>
+      <a href="#work">Проекты</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a href="#contact" class="nav__cta">Обсудить проект</a>
+    <button class="nav__burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__inner">
+      <div class="hero__col hero__col--text">
+        <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span>Fullstack разработчик · Kwork &amp; GitHub</p>
+        <h1 class="hero__title" data-reveal>
+          Программирование —<br>
+          как смысл <em>жизни</em>.
+        </h1>
+        <p class="hero__lead" data-reveal>
+          Меня зовут Артём, в сети — <strong>HellenWeb</strong>. Собираю веб-приложения,
+          Telegram-ботов и интеграции с нейросетями, которые запускаются и не падают —
+          от первой строчки кода до продакшена.
+        </p>
+        <div class="hero__actions" data-reveal>
+          <a href="#work" class="btn btn--primary">Смотреть проекты</a>
+          <a href="https://kwork.ru/user/artemkondratyev23" class="btn btn--ghost" target="_blank" rel="noopener">Заказать на Kwork</a>
         </div>
+        <dl class="hero__stats" data-reveal>
+          <div><dt>48</dt><dd>репозиториев</dd></div>
+          <div><dt>66</dt><dd>звёзд на GitHub</dd></div>
+          <div><dt>3</dt><dd>языка в стеке&nbsp;⁠— JS · PHP · Python</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero__col hero__col--term">
+        <div class="term" data-reveal>
+          <div class="term__bar">
+            <span class="term__dot"></span><span class="term__dot"></span><span class="term__dot"></span>
+            <span class="term__title">hellenweb — zsh</span>
+          </div>
+          <div class="term__body" id="termBody" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section__head">
+      <span class="section__num">01</span>
+      <h2 class="section__title">Обо&nbsp;мне</h2>
+    </div>
+    <div class="about__grid">
+      <div class="about__text">
+        <p>
+          Пишу код с прицелом на результат, а не на красивую презентацию.
+          Специализируюсь на связке <strong>фронтенда, бэкенда и автоматизации</strong>:
+          от лендингов и полноценных веб-приложений до Telegram-ботов
+          и сервисов на основе искусственного интеллекта.
+        </p>
+        <p>
+          Ценю чистый код, понятный UX и проекты, которые решают реальные задачи бизнеса,
+          а не существуют «для галочки». Открыт к фрилансу и долгосрочному сотрудничеству.
+        </p>
+        <ul class="about__focus">
+          <li>Современные веб-приложения</li>
+          <li>Telegram-боты любой сложности</li>
+          <li>Интеграции с нейросетями</li>
+          <li>Быстрая и надёжная разработка</li>
+        </ul>
+      </div>
+      <figure class="about__quote">
+        <blockquote>«Programming as the meaning of life.»</blockquote>
+        <figcaption>— строка из моего GitHub-профиля, и я от неё не отказываюсь</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="section stack" id="stack">
+    <div class="section__head">
+      <span class="section__num">02</span>
+      <h2 class="section__title">Стек технологий</h2>
     </div>
 
-    <!--Waves Container-->
-    <div>
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-    <defs>
-    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-    </defs>
-    <g class="parallax">
-    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-    </g>
-    </svg>
+    <div class="ledger">
+      <div class="ledger__row ledger__row--head">
+        <span>Категория</span><span>Технологии</span>
+      </div>
+      <div class="ledger__row">
+        <span>Frontend</span>
+        <span class="tags"><i>JavaScript</i><i>TypeScript</i><i>Vue.js</i><i>React</i></span>
+      </div>
+      <div class="ledger__row">
+        <span>Backend</span>
+        <span class="tags"><i>Node.js</i><i>Laravel (PHP)</i><i>Python</i></span>
+      </div>
+      <div class="ledger__row">
+        <span>Инфраструктура</span>
+        <span class="tags"><i>Docker</i><i>REST API</i><i>MySQL</i><i>MongoDB</i></span>
+      </div>
+      <div class="ledger__row">
+        <span>ИИ / ML</span>
+        <span class="tags"><i>AI/ML-интеграции</i><i>Нейросетевые API</i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="section feature" id="feature">
+    <div class="section__head">
+      <span class="section__num">03</span>
+      <h2 class="section__title">Клиентский проект</h2>
+    </div>
+    <div class="feature__card">
+      <div class="feature__info">
+        <p class="feature__tag">Mini App · Fullstack</p>
+        <h3>Мини приложение для компании по натяжным потолкам</h3>
+        <p class="feature__desc">
+          Телеграмм Mini App под ключ: витрина услуг, приём заявок и Telegram-уведомления
+          для отдела продаж. Бэкенд на FastAPI, интерфейс на Vue.js,
+          заявки обрабатывает бот на Aiogram, данные — в SQLite.
+        </p>
+        <div class="feature__stack">
+          <i>FastAPI</i><i>Vue.js</i><i>Aiogram</i><i>SQLite</i>
+        </div>
+        <a href="https://github.com/HellenWeb/potolok_dekokhv-info" class="link-arrow" target="_blank" rel="noopener">Открыть репозиторий →</a>
+      </div>
+      <div class="feature__visual" aria-hidden="true">
+        <svg viewBox="0 0 320 220" fill="none">
+          <rect x="1" y="1" width="318" height="218" rx="4" stroke="currentColor" stroke-opacity=".25"/>
+          <rect x="24" y="28" width="272" height="18" rx="2" fill="currentColor" fill-opacity=".12"/>
+          <rect x="24" y="60" width="180" height="10" rx="2" fill="currentColor" fill-opacity=".2"/>
+          <rect x="24" y="80" width="220" height="10" rx="2" fill="currentColor" fill-opacity=".2"/>
+          <rect x="24" y="112" width="82" height="60" rx="3" stroke="currentColor" stroke-opacity=".35"/>
+          <rect x="119" y="112" width="82" height="60" rx="3" stroke="currentColor" stroke-opacity=".35"/>
+          <rect x="214" y="112" width="82" height="60" rx="3" stroke="currentColor" stroke-opacity=".35"/>
+          <rect x="24" y="188" width="120" height="14" rx="7" fill="currentColor" fill-opacity=".85" class="feature__pulse"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section work" id="work">
+    <div class="section__head">
+      <span class="section__num">04</span>
+      <h2 class="section__title">Репозитории</h2>
     </div>
 
-    <div class="content flex">
-        <p>Copyright by. Hellen</p>
-    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card__top">
+          <span class="card__lang" data-lang="js">JavaScript</span>
+          <span class="card__stars">★ 1</span>
+        </div>
+        <h3>mern-app</h3>
+        <p>Полноценное приложение на связке MERN — MongoDB, Express, React, Node.js.</p>
+        <div class="card__stack"><i>MongoDB</i><i>Express</i><i>React</i><i>Node.js</i></div>
+        <a href="https://github.com/HellenWeb/mern-app" target="_blank" rel="noopener" class="card__link">github.com/HellenWeb/mern-app</a>
+      </article>
+
+      <article class="card">
+        <div class="card__top">
+          <span class="card__lang" data-lang="py">Python</span>
+          <span class="card__stars">&nbsp;</span>
+        </div>
+        <h3>yuhu-bot</h3>
+        <p>Telegram-бот для кальянного магазина «Yuhu»: каталог, заказы и общение с клиентами.</p>
+        <div class="card__stack"><i>Python</i><i>Telegram API</i></div>
+        <a href="https://github.com/HellenWeb/yuhu-bot" target="_blank" rel="noopener" class="card__link">github.com/HellenWeb/yuhu-bot</a>
+      </article>
+
+      <article class="card">
+        <div class="card__top">
+          <span class="card__lang" data-lang="js">JavaScript</span>
+          <span class="card__stars">&nbsp;</span>
+        </div>
+        <h3>finance-manager</h3>
+        <p>Веб приложения на стеке NextJS/React/PostgreSQL/Tailwind сделанное для удобного управления своим кошельком</p>
+        <div class="card__stack"><i>NextJS</i><i>React</i></div>
+        <a href="https://github.com/HellenWeb/finance-manager" target="_blank" rel="noopener" class="card__link">github.com/HellenWeb/bloguru</a>
+      </article>
+
+      <article class="card">
+        <div class="card__top">
+          <span class="card__lang" data-lang="sh">Shell</span>
+          <span class="card__stars">★ 2</span>
+        </div>
+        <h3>scankick</h3>
+        <p>Bash-скрипт для сканирования сайтов и портов через nmap и zmap с анализом curl-запросов.</p>
+        <div class="card__stack"><i>Bash</i><i>nmap</i><i>zmap</i></div>
+        <a href="https://github.com/HellenWeb/scankick" target="_blank" rel="noopener" class="card__link">github.com/HellenWeb/scankick</a>
+      </article>
+
+      <article class="card">
+        <div class="card__top">
+          <span class="card__lang" data-lang="php">PHP</span>
+          <span class="card__stars">&nbsp;</span>
+        </div>
+        <h3>laravel-docker</h3>
+        <p>Эталонный пример стандартного Laravel-приложения, упакованного в Docker-контейнер.</p>
+        <div class="card__stack"><i>Laravel</i><i>Docker</i></div>
+        <a href="https://github.com/HellenWeb/laravel-docker" target="_blank" rel="noopener" class="card__link">github.com/HellenWeb/laravel-docker</a>
+      </article>
+
+      <article class="card">
+        <div class="card__top">
+          <span class="card__lang" data-lang="py">Python</span>
+          <span class="card__stars">&nbsp;</span>
+        </div>
+        <h3>ipscan</h3>
+        <p>Скрипт, выводящий полную информацию об IP-адресе через сервис ip-api.com.</p>
+        <div class="card__stack"><i>Python</i><i>ip-api.com</i></div>
+        <a href="https://github.com/HellenWeb/ipscan" target="_blank" rel="noopener" class="card__link">github.com/HellenWeb/ipscan</a>
+      </article>
 
     </div>
+
+    <a href="https://github.com/HellenWeb?tab=repositories" target="_blank" rel="noopener" class="link-arrow work__more">Все репозитории на GitHub →</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="contact__inner">
+      <div class="section__head">
+        <span class="section__num">05</span>
+        <h2 class="section__title">Давайте работать вместе</h2>
+      </div>
+      <p class="contact__lead">
+        Открыт к новым заказам — от лендинга и Telegram-бота
+        до интеграции с ИИ и полноценного веб-приложения.
+      </p>
+      <div class="contact__grid">
+        <a class="contact__card" href="https://kwork.ru/user/artemkondratyev23" target="_blank" rel="noopener">
+          <span class="contact__label">Заказать проект</span>
+          <span class="contact__value">Kwork — artemkondratyev23</span>
+        </a>
+        <a class="contact__card" href="https://github.com/HellenWeb" target="_blank" rel="noopener">
+          <span class="contact__label">Код и репозитории</span>
+          <span class="contact__value">github.com/HellenWeb</span>
+        </a>
+        <a class="contact__card" href="https://t.me/YungHellen" target="_blank" rel="noopener">
+          <span class="contact__label">Телеграм</span>
+          <span class="contact__value">Артём Кондратьев</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>HellenWeb — Артём Кондратьев</span>
+  <span>Сделано с ❤ и кодом · 2026</span>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+<script src="js/main.js"></script>
 </body>
 </html>
