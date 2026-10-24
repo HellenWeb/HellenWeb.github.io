@@ -1,159 +1,75 @@
-// HellenWeb Portfolio - Beautiful JS
-document.addEventListener('DOMContentLoaded', () => {
-  // Mobile menu
-  const burger = document.getElementById('burger');
-  const navLinks = document.querySelector('.nav__links');
-  
-  if (burger) {
-    burger.addEventListener('click', () => {
-      document.body.classList.toggle('menu-open');
-      const isExpanded = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', !isExpanded);
-    });
+(() => {
+  const root = document.documentElement;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // 1. Заголовок: разбиваем на буквы, каждая выезжает из-под маски
+  const h1 = document.querySelector('h1');
+  const text = h1.textContent;
+  h1.setAttribute('aria-label', text);
+  h1.textContent = '';
+  [...text].forEach((ch, i) => {
+    const mask = document.createElement('span');
+    const letter = document.createElement('span');
+    mask.className = 'ch';
+    mask.setAttribute('aria-hidden', 'true');
+    letter.textContent = ch;
+    letter.style.setProperty('--d', `${250 + i * 90}ms`);
+    mask.append(letter);
+    h1.append(mask);
+  });
+
+  // 2. Появление при скролле + очередь внутри каждой сетки
+  document.querySelectorAll('.grid').forEach(g =>
+    [...g.children].forEach((c, i) => c.style.setProperty('--i', i)));
+  const items = document.querySelectorAll('.card, [data-reveal]');
+  if (reduced || !('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: .15, rootMargin: '0px 0px -60px 0px' });
+    items.forEach(el => io.observe(el));
   }
 
-  // Close mobile menu on link click
-  if (navLinks) {
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.body.classList.remove('menu-open');
-        if (burger) burger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  // Scroll navbar effect
-  const nav = document.getElementById('nav');
-  let lastScroll = 0;
-
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    
-    if (nav) {
-      if (currentScroll > 50) {
-        nav.classList.add('is-scrolled');
-      } else {
-        nav.classList.remove('is-scrolled');
-      }
-
-      if (currentScroll > lastScroll && currentScroll > 300) {
-        nav.style.transform = 'translateY(-100%)';
-      } else {
-        nav.style.transform = 'translateY(0)';
-      }
+  // 3. Плавающая «капля» в навигации
+  const nav = document.getElementById('pills');
+  const glide = nav.querySelector('.glide');
+  const links = [...nav.querySelectorAll('[data-nav]')];
+  let active = null;
+  const move = el => {
+    if (!el) { glide.style.opacity = 0; return; }
+    glide.style.opacity = 1;
+    glide.style.width = el.offsetWidth + 'px';
+    glide.style.transform = `translateX(${el.offsetLeft}px)`;
+  };
+  links.forEach(l => {
+    l.addEventListener('mouseenter', () => move(l));
+    l.addEventListener('focus', () => move(l));
+  });
+  nav.addEventListener('mouseleave', () => move(active));
+  nav.addEventListener('focusout', () => move(active));
+  addEventListener('resize', () => move(active));
+  const spy = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) {
+      active = links.find(l => l.dataset.nav === e.target.id) || null;
+      move(active);
     }
-    lastScroll = currentScroll;
-  });
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['work', 'about', 'contact'].forEach(id => spy.observe(document.getElementById(id)));
+  addEventListener('scroll', () => { if (scrollY < 200) { active = null; move(null); } }, { passive: true });
 
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('[data-reveal]');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-in');
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  });
-
-  reveals.forEach(reveal => revealObserver.observe(reveal));
-
-  // Beautiful Terminal Typing Effect
-  const termBody = document.getElementById('termBody');
-  if (termBody) {
-    const commands = [
-      { text: 'whoami', delay: 800, type: 'cmd' },
-      { text: 'HellenWeb — fullstack dev', delay: 400, type: 'out' },
-      { text: '', delay: 300 },
-      { text: 'ls projects/', delay: 600, type: 'cmd' },
-      { text: 'potolok_dekokhv-info  mern-app', delay: 500, type: 'out' },
-      { text: '', delay: 200 },
-      { text: 'echo "Programming as the meaning of life."', delay: 700, type: 'cmd' },
-      { text: 'Programming as the meaning of life.', delay: 400, type: 'accent' },
-      { text: '', delay: 600 },
-      { text: 'git status', delay: 500, type: 'cmd' },
-      { text: 'On branch main — ready for new projects 🚀', delay: 450, type: 'out' }
-    ];
-
-    let i = 0;
-
-    function typeLine() {
-      if (i >= commands.length) {
-        setTimeout(() => {
-          termBody.innerHTML = '';
-          i = 0;
-          typeLine();
-        }, 4500);
-        return;
-      }
-
-      const cmd = commands[i];
-      const line = document.createElement('div');
-      line.className = `tok-${cmd.type || 'out'}`;
-      termBody.appendChild(line);
-
-      if (cmd.text === '') {
-        line.innerHTML = '&nbsp;';
-        i++;
-        setTimeout(typeLine, cmd.delay || 300);
-        return;
-      }
-
-      let charIndex = 0;
-      const text = cmd.text;
-
-      function typeChar() {
-        if (charIndex < text.length) {
-          line.textContent += text.charAt(charIndex);
-          charIndex++;
-          setTimeout(typeChar, 20 + Math.random() * 35);
-        } else {
-          i++;
-          setTimeout(typeLine, cmd.delay || 400);
-        }
-      }
-      typeChar();
-    }
-
-    setTimeout(typeLine, 1000);
-  }
-
-  // To Top Button
-  const toTop = document.getElementById('toTop');
-  if (toTop) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 600) {
-        toTop.classList.add('is-visible');
-      } else {
-        toTop.classList.remove('is-visible');
-      }
-    });
-
-    toTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        e.preventDefault();
-        const offset = 80;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  console.log('%cHellenWeb Portfolio loaded with love ❤️', 'color:#c9a227; font-family:monospace;');
-});
+  // 4. Параллакс фона с инерцией (lerp), цикл останавливается, когда всё устоялось
+  if (reduced) return;
+  let target = scrollY, current = scrollY, running = false;
+  const tick = () => {
+    current += (target - current) * .08;
+    root.style.setProperty('--sy', current.toFixed(1));
+    if (Math.abs(target - current) > .1) requestAnimationFrame(tick);
+    else running = false;
+  };
+  addEventListener('scroll', () => {
+    target = scrollY;
+    if (!running) { running = true; requestAnimationFrame(tick); }
+  }, { passive: true });
+})();

@@ -1,245 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Артём Кондратьев — Fullstack разработчик</title>
-<meta name="description" content="HellenWeb — fullstack-разработчик. Веб-приложения, Telegram-боты, интеграции с ИИ.">
-<link rel="icon" href="data:,">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Артём (HellenWeb) — Fullstack-разработчик</title>
+<meta name="description" content="Fullstack-разработчик: Telegram-боты, Mini Apps, веб-приложения и AI-интеграции для бизнеса.">
+<meta name="theme-color" content="#e8efd9">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Артём (HellenWeb) — Fullstack-разработчик">
+<meta property="og:description" content="Telegram-боты, Mini Apps и AI-интеграции — от идеи до продакшена.">
+<meta property="og:url" content="https://hellenweb.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<div class="bg" aria-hidden="true"><i class="blob a"></i><i class="blob b"></i><i class="blob c"></i></div>
+<a class="skip" href="#work">К проектам</a>
 
-<div class="grain" aria-hidden="true"></div>
-<div class="rail" aria-hidden="true"><svg class="rail__line" viewBox="0 0 2 100" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="100" /></svg></div>
-
-<header class="nav" id="nav">
-  <div class="nav__inner">
-    <a href="#top" class="nav__mark">HW<span>.</span></a>
-    <nav class="nav__links">
-      <a href="#about">Обо мне</a>
-      <a href="#stack">Стек</a>
-      <a href="#work">Проекты</a>
-      <a href="#contact">Контакты</a>
-    </nav>
-    <a href="#contact" class="nav__cta">Обсудить проект</a>
-    <button class="nav__burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+<header class="top">
+  <nav class="pills" id="pills" aria-label="Навигация">
+    <i class="glide" aria-hidden="true"></i>
+    <a class="pill brand" href="#top">HellenWeb</a>
+    <a class="pill" data-nav="work" href="#work">Проекты</a>
+    <a class="pill" data-nav="about" href="#about">Обо мне</a>
+    <a class="pill" data-nav="contact" href="#contact">Контакты</a>
+  </nav>
 </header>
 
-<main id="top">
+<main>
+<section class="wrap hero" id="top">
+  <div class="hero-in">
+    <h1>Делаю.</h1>
+    <p class="sub">Я Артём, fullstack-разработчик. Собираю Telegram-ботов, Mini Apps и веб-приложения с AI, которые принимают заказы, а не просто выглядят красиво.</p>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero__inner">
-      <div class="hero__col hero__col--text">
-        <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span>Fullstack разработчик · Kwork &amp; GitHub</p>
-        <h1 class="hero__title" data-reveal>
-          Программирование —<br>
-          как смысл <em>жизни</em>.
-        </h1>
-        <p class="hero__lead" data-reveal>
-          Меня зовут Артём, в сети — <strong>HellenWeb</strong>. Собираю веб-приложения,
-          Telegram-ботов и интеграции с нейросетями, которые запускаются и не падают —
-          от первой строчки кода до продакшена.
-        </p>
-        <div class="hero__actions" data-reveal>
-          <a href="#work" class="btn btn--primary">Смотреть проекты</a>
-          <a href="https://kwork.ru/user/artemkondratyev23" class="btn btn--ghost" target="_blank" rel="noopener">Заказать на Kwork</a>
-        </div>
-        <dl class="hero__stats" data-reveal>
-          <div><dt>48</dt><dd>репозиториев</dd></div>
-          <div><dt>66</dt><dd>звёзд на GitHub</dd></div>
-          <div><dt>3</dt><dd>языка в стеке&nbsp;⁠— JS · PHP · Python</dd></div>
-        </dl>
-      </div>
-
-      <div class="hero__col hero__col--term">
-        <div class="term" data-reveal>
-          <div class="term__bar">
-            <span class="term__dot"></span><span class="term__dot"></span><span class="term__dot"></span>
-            <span class="term__title">hellenweb — zsh</span>
-          </div>
-          <div class="term__body" id="termBody" aria-hidden="true"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section about" id="about">
-    <div class="section__head">
-      <span class="section__num">01</span>
-      <h2 class="section__title">Обо&nbsp;мне</h2>
-    </div>
-    <div class="about__grid">
-      <div class="about__text">
-        <p>
-          Пишу код с прицелом на результат, а не на красивую презентацию.
-          Специализируюсь на связке <strong>фронтенда, бэкенда и автоматизации</strong>:
-          от лендингов и полноценных веб-приложений до Telegram-ботов
-          и сервисов на основе искусственного интеллекта.
-        </p>
-        <p>
-          Ценю чистый код, понятный UX и проекты, которые решают реальные задачи бизнеса,
-          а не существуют «для галочки». Открыт к фрилансу и долгосрочному сотрудничеству.
-        </p>
-        <ul class="about__focus">
-          <li>Современные веб-приложения</li>
-          <li>Telegram-боты любой сложности</li>
-          <li>Интеграции с нейросетями</li>
-          <li>Быстрая и надёжная разработка</li>
-        </ul>
-      </div>
-      <figure class="about__quote">
-        <blockquote>«Programming as the meaning of life.»</blockquote>
-        <figcaption>— строка из моего GitHub-профиля, и я от неё не отказываюсь</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- STACK -->
-  <section class="section stack" id="stack">
-    <div class="section__head">
-      <span class="section__num">02</span>
-      <h2 class="section__title">Стек технологий</h2>
-    </div>
-
-    <div class="ledger">
-      <div class="ledger__row ledger__row--head">
-        <span>Категория</span><span>Технологии</span>
-      </div>
-      <div class="ledger__row">
-        <span>Frontend</span>
-        <span class="tags"><i>JavaScript</i><i>TypeScript</i><i>Vue.js</i><i>React</i></span>
-      </div>
-      <div class="ledger__row">
-        <span>Backend</span>
-        <span class="tags"><i>Node.js</i><i>Laravel (PHP)</i><i>Python</i></span>
-      </div>
-      <div class="ledger__row">
-        <span>Инфраструктура</span>
-        <span class="tags"><i>Docker</i><i>REST API</i><i>MySQL</i><i>MongoDB</i></span>
-      </div>
-      <div class="ledger__row">
-        <span>ИИ / ML</span>
-        <span class="tags"><i>AI/ML-интеграции</i><i>Нейросетевые API</i></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED -->
-  <section class="section feature" id="feature">
-    <div class="section__head">
-      <span class="section__num">03</span>
-      <h2 class="section__title">Клиентский проект</h2>
-    </div>
-    <div class="feature__card">
-      <div class="feature__info">
-        <p class="feature__tag">Mini App · Fullstack</p>
-        <h3>Мини приложение для компании по натяжным потолкам</h3>
-        <p class="feature__desc">
-          Телеграмм Mini App под ключ: витрина услуг, приём заявок и Telegram-уведомления
-          для отдела продаж. Бэкенд на FastAPI, интерфейс на Vue.js,
-          заявки обрабатывает бот на Aiogram, данные — в SQLite.
-        </p>
-        <div class="feature__stack">
-          <i>FastAPI</i><i>Vue.js</i><i>Aiogram</i><i>SQLite</i>
-        </div>
-        <a href="https://github.com/HellenWeb/potolok_dekokhv-info" class="link-arrow" target="_blank" rel="noopener">Открыть репозиторий →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section class="section work" id="work">
-    <div class="section__head">
-      <span class="section__num">04</span>
-      <h2 class="section__title">Репозитории</h2>
-    </div>
-
-    <div class="cards">
-
-      <article class="card">
-        <div class="card__top">
-          <span class="card__lang" data-lang="py">Python</span>
-          <span class="card__stars">* 2</span>
-        </div>
+<section class="wrap" id="work" aria-labelledby="work-title">
+  <h2 id="work-title" class="sr">Проекты</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/HellenWeb/yuhu-bot" target="_blank" rel="noopener" style="--c:#ff8a6b">
+      <div class="body">
         <h3>yuhu-bot</h3>
-        <p>Telegram-бот для кальянного магазина «Yuhu»: каталог, заказы и общение с клиентами.</p>
-        <div class="card__stack"><i>Python</i><i>Telegram API</i><i>Aiogram</i></div>
-        <a href="https://github.com/HellenWeb/yuhu-bot" target="_blank" rel="noopener" class="card__link">github.com/HellenWeb/yuhu-bot</a>
-      </article>
-
-      <article class="card">
-        <div class="card__top">
-          <span class="card__lang" data-lang="js">JavaScript</span>
-          <span class="card__stars">* 1</span>
-        </div>
-        <h3>finance-manager</h3>
-        <p>Веб приложения на стеке NextJS/React/PostgreSQL/Tailwind сделанное для удобного управления своим кошельком</p>
-        <div class="card__stack"><i>NextJS</i><i>React</i><i>PostgreSQL</i><i>Tailwind</i></div>
-        <a href="https://github.com/HellenWeb/finance-manager" target="_blank" rel="noopener" class="card__link">github.com/HellenWeb/finance-manager</a>
-      </article>
-
-      <article class="card">
-        <div class="card__top">
-          <span class="card__lang" data-lang="py">Python</span>
-          <span class="card__stars">* 3</span>
-        </div>
+        <p>Telegram-магазин для кальянного бренда «Yuhu». Каталог, корзина, заказ, доставка и трекинг прямо в чате.</p>
+        <ul class="tags"><li>Python</li><li>aiogram 3</li><li>MongoDB</li><li>Docker</li></ul>
+      </div>
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span>
+    </a>
+    <a class="card" href="https://github.com/HellenWeb/potolok_dekokhv-info" target="_blank" rel="noopener" style="--c:#6f8cff">
+      <div class="body">
         <h3>potolok_dekokhv-info</h3>
-        <p>Современное Telegram Mini App для автоматизации замеров, оформления заявок и взаимодействия с клиентами.</p>
-        <div class="card__stack"><i>FastAPI</i><i>Vue.js</i><i>Aiogram</i><i>SQLite</i></div>
-        <a href="https://github.com/HellenWeb/potolok_dekokhv-info" target="_blank" rel="noopener" class="card__link">github.com/HellenWeb/potolok_dekokhv-info</a>
-      </article>
-
-    </div>
-
-    <a href="https://github.com/HellenWeb?tab=repositories" target="_blank" rel="noopener" class="link-arrow work__more">Все репозитории на GitHub →</a>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section contact" id="contact">
-    <div class="contact__inner">
-      <div class="section__head">
-        <span class="section__num">05</span>
-        <h2 class="section__title">Давайте работать вместе</h2>
+        <p>Mini App и админ-бот для компании по натяжным потолкам. Заявки, замеры, геолокация и CRM в одном месте.</p>
+        <ul class="tags"><li>FastAPI</li><li>Vue.js</li><li>aiogram</li><li>SQLAlchemy</li></ul>
       </div>
-      <p class="contact__lead">
-        Открыт к новым заказам — от лендинга и Telegram-бота
-        до интеграции с ИИ и полноценного веб-приложения.
-      </p>
-      <div class="contact__grid">
-        <a class="contact__card" href="https://kwork.ru/user/artemkondratyev23" target="_blank" rel="noopener">
-          <span class="contact__label">Заказать проект</span>
-          <span class="contact__value">Kwork — artemkondratyev23</span>
-        </a>
-        <a class="contact__card" href="https://github.com/HellenWeb" target="_blank" rel="noopener">
-          <span class="contact__label">Код и репозитории</span>
-          <span class="contact__value">github.com/HellenWeb</span>
-        </a>
-        <a class="contact__card" href="https://t.me/YungHellen" target="_blank" rel="noopener">
-          <span class="contact__label">Телеграм</span>
-          <span class="contact__value">Артём Кондратьев</span>
-        </a>
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+    </a>
+    <a class="card" href="https://github.com/HellenWeb/termsOfReference-llm" target="_blank" rel="noopener" style="--c:#f2b134">
+      <div class="body">
+        <h3>termsOfReference-llm</h3>
+        <p>Бот проводит интервью с заказчиком, а LLM собирает техническое задание. На выходе готовые DOCX и PDF.</p>
+        <ul class="tags"><li>Python</li><li>aiogram 3</li><li>OpenAI API</li><li>python-docx</li><li>fpdf2</li></ul>
       </div>
-    </div>
-  </section>
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7V3Z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span>
+    </a>
+  </div>
+</section>
 
+<section class="wrap about" id="about" aria-labelledby="about-title">
+  <h2 id="about-title" data-reveal>Обо мне</h2>
+  <div class="panel" data-reveal>
+    <p>Беру задачу целиком: от структуры данных и API до интерфейса и деплоя в Docker. Чаще всего работаю в Telegram, где у бизнеса уже есть клиенты. Пишу чистый код, который можно поддерживать после сдачи.</p>
+    <div class="stack">
+      <div><b>Frontend</b><ul class="tags"><li>Vue.js</li><li>React</li><li>JavaScript</li></ul></div>
+      <div><b>Backend</b><ul class="tags"><li>Python</li><li>FastAPI</li><li>aiogram 3</li><li>SQLAlchemy</li></ul></div>
+      <div><b>Данные и деплой</b><ul class="tags"><li>MongoDB</li><li>SQLite</li><li>Docker</li></ul></div>
+      <div><b>AI и документы</b><ul class="tags"><li>OpenAI API</li><li>python-docx</li><li>fpdf2</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap contact" id="contact" aria-labelledby="contact-title">
+  <h2 id="contact-title" data-reveal>Есть задача? Напишите.</h2>
+  <div class="grid">
+    <a class="card small" href="https://t.me/YungHellen" target="_blank" rel="noopener" style="--c:#4fb3e8"><div class="body"><h3>Telegram</h3><p>@YungHellen</p></div><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 4 3 11l6 2 2 6 3-4 5 4 2-15Z"/></svg></span></a>
+    <a class="card small" href="https://kwork.ru/user/artemkondratyev23" target="_blank" rel="noopener" style="--c:#5cc08a"><div class="body"><h3>Kwork</h3><p>artemkondratyev23</p></div><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h16v11H4V8Z"/><path d="M9 8V5h6v3"/></svg></span></a>
+    <a class="card small" href="https://github.com/HellenWeb" target="_blank" rel="noopener" style="--c:#8b7bd8"><div class="body"><h3>GitHub</h3><p>HellenWeb</p></div><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></svg></span></a>
+  </div>
+</section>
 </main>
 
-<footer class="footer">
-  <span>HellenWeb — Артём Кондратьев</span>
-  <span>Сделано с ❤ и кодом · 2026</span>
-</footer>
-
-<button class="to-top" id="toTop" aria-label="Наверх">↑</button>
-
+<footer class="wrap foot" data-reveal>© <span id="year">2026</span> Артём (HellenWeb). Люблю Эльвирочку <3 </footer>
 <script src="js/main.js"></script>
 </body>
 </html>
